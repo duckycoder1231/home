@@ -9,10 +9,10 @@
         header { text-align: center; margin-bottom: 40px; }
         section { margin-bottom: 30px; }
         h2 { color: #333; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin: 5px 0; }
-        a { text-decoration: none; color: #007bff; }
-        a:hover { text-decoration: underline; }
+        #search { width: 100%; padding: 10px; margin-bottom: 20px; }
+        #games-container { display: flex; flex-wrap: wrap; gap: 10px; }
+        button { background-color: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; font-size: inherit; }
+        button:hover { background-color: #0056b3; }
         nav { margin-bottom: 20px; }
     </style>
 </head>
@@ -25,15 +25,38 @@
 
     <section>
         <h2>Available Games</h2>
-        <ul>
-            <li><a href="#">Game 1</a> - Action-packed adventure.</li>
-            <li><a href="#">Game 2</a> - Puzzle challenge.</li>
-            <li><a href="#">Game 3</a> - Multiplayer fun.</li>
-        </ul>
+        <input type="text" id="search" placeholder="Search games...">
+        <div id="games-container"></div>
     </section>
 
     <footer>
         <p>&copy; 2023 Game Hub. All rights reserved.</p>
     </footer>
+
+    <script>
+        const games = [
+            { name: 'Game 1', desc: 'Action-packed adventure.', file: 'game1.html' },
+            { name: 'Game 2', desc: 'Puzzle challenge.', file: 'game2.html' },
+            { name: 'Game 3', desc: 'Multiplayer fun.', file: 'game3.html' }
+            // Add new games here as objects: { name: 'New Game', desc: 'Description', file: 'newgame.html' }
+        ];
+
+        const container = document.getElementById('games-container');
+        const searchInput = document.getElementById('search');
+
+        function renderGames(filter = '') {
+            container.innerHTML = '';
+            games.filter(game => game.name.toLowerCase().includes(filter.toLowerCase()) || game.desc.toLowerCase().includes(filter.toLowerCase()))
+                .forEach(game => {
+                    const button = document.createElement('button');
+                    button.textContent = game.name;
+                    button.onclick = () => window.location.href = game.file;
+                    container.appendChild(button);
+                });
+        }
+
+        renderGames();
+        searchInput.addEventListener('input', (e) => renderGames(e.target.value));
+    </script>
 </body>
 </html>
