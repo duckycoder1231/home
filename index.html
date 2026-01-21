@@ -9,8 +9,13 @@
         header { text-align: center; margin-bottom: 40px; }
         section { margin-bottom: 30px; }
         h2 { color: #007bff; }
-        button { background-color: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; font-size: inherit; }
+        h3 { color: #007bff; margin-top: 20px; }
+        button { background-color: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; font-size: inherit; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
         button:hover { background-color: #0056b3; }
+        ul { list-style-type: disc; margin-left: 20px; }
+        form { margin-top: 10px; }
+        textarea { width: 100%; padding: 10px; background-color: black; color: white; border: 1px solid #007bff; border-radius: 5px; resize: vertical; }
+        input[type="submit"] { margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -37,6 +42,16 @@
     <section id="other-stuff">
         <h2><button onclick="window.location.href='other.html'">Other Stuff</button></h2>
         <p>Community forums, tutorials, and news.</p>
+        <h3>Changelog</h3>
+        <ul>
+            <li>Version 1.1: Added new games to the catalogue.</li>
+            <li>Version 1.0: Initial release with basic features.</li>
+        </ul>
+        <h3>Suggestion Form</h3>
+        <form onsubmit="alert('Thank you for your suggestion!'); return false;">
+            <textarea placeholder="Enter your suggestion here..." required></textarea>
+            <button type="submit">Submit Suggestion</button>
+        </form>
     </section>
 
     <footer>
