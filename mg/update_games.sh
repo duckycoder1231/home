@@ -12,14 +12,17 @@ for file in $(find Game -name "*.html" -type f | sort); do
     if [ -z "$title" ]; then
         title=$(basename "$file" .html)
     fi
-    # Add to list
-    games_list+="{ name: \"$title\", desc: \"Description\", file: \"$file\" },"
+    # Add to list with newline
+    games_list+="{ name: \"$title\", desc: \"Description\", file: \"$file\" },\n"
 done
 
-# Remove trailing comma
-games_list=${games_list%,}
+# Remove trailing comma and newline
+games_list=$(echo -e "$games_list" | sed '$ s/,$//')
 
-# Replace the games array in index.html (assumes it's on one line)
-sed -i "s/const games = \[.*\];/const games = [$games_list];/" index.html
+# Replace the games array block in index.html
+sed -i "/const games = \[/,/];/c\\
+const games = [
+$games_list
+];" index.html
 
 echo "Games array updated in index.html with titles extracted from files."
