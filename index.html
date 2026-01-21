@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Hub Homepage</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: black; color: white; }
         header { text-align: center; margin-bottom: 40px; }
         section { margin-bottom: 30px; }
-        h2 { color: #333; }
-        a { text-decoration: none; color: #007bff; }
-        a:hover { text-decoration: underline; }
+        h2 { color: #007bff; }
+        button { background-color: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; font-size: inherit; }
+        button:hover { background-color: #0056b3; }
     </style>
 </head>
 <body>
@@ -20,22 +20,22 @@
     </header>
 
     <section id="proxies">
-        <h2><a href="proxies.html" target="_blank">Proxies</a></h2>
+        <h2><button onclick="window.location.href='proxies.html'">Proxies</button></h2>
         <p>Access tools for secure and anonymous browsing.</p>
     </section>
 
     <section id="games">
-        <h2><a href="mg/index.html" target="_blank">Games</a></h2>
+        <h2><button onclick="window.location.href='mg/index.html'">Games</button></h2>
         <p>Explore our collection of exciting games.</p>
     </section>
 
     <section id="tools">
-        <h2><a href="tools.html" target="_blank">Tools</a></h2>
+        <h2><button onclick="window.location.href='tools.html'">Tools</button></h2>
         <p>Find utilities to enhance your gaming experience.</p>
     </section>
 
     <section id="other-stuff">
-        <h2><a href="other.html" target="_blank">Other Stuff</a></h2>
+        <h2><button onclick="window.location.href='other.html'">Other Stuff</button></h2>
         <p>Community forums, tutorials, and news.</p>
     </section>
 
