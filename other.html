@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Other Stuff - Game Hub</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: black; color: white; }
         header { text-align: center; margin-bottom: 40px; }
         section { margin-bottom: 30px; }
-        h2 { color: #333; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin: 5px 0; }
-        a { text-decoration: none; color: #007bff; }
-        a:hover { text-decoration: underline; }
+        h2 { color: #007bff; }
+        h3 { color: #007bff; margin-top: 20px; }
+        button { background-color: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; font-size: inherit; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        button:hover { background-color: #0056b3; }
+        ul { list-style-type: disc; margin-left: 20px; }
         nav { margin-bottom: 20px; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -30,6 +32,19 @@
             <li><a href="#">Tutorials</a> - How-to guides.</li>
             <li><a href="#">News</a> - Latest updates.</li>
         </ul>
+    </section>
+
+    <section>
+        <h2>Changelog</h2>
+        <ul>
+            <li>Version 0.02: Added new games to the catalogue.</li>
+            <li>Version 0.01: Initial release with basic features.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Submission Form</h2>
+        <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdiQf86nKnkkOgAywXe_OjP87encJXCK33ReRdMe-TgreTMtQ/viewform?usp=publish-editor', '_blank')">Submit Suggestion</button>
     </section>
 
     <footer>
