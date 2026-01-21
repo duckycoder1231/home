@@ -34,11 +34,14 @@
     </footer>
 
     <script>
-const games = [
-{ name: "1", desc: "Description", file: "Game/1(2048-version).html" },
+        // Manually add games to this array. Format: { name: "Game Name", desc: "Short description", file: "Game/filename.html" }
+        const games = [
+            { name: "1", desc: "Description", file: "Game/1(2048-version).html" },
 { name: "really cool flash game", desc: "Description", file: "Game/10bullets.html" },
 { name: "2048 Cupcakes", desc: "Description", file: "Game/2048-Cupcakes.html" },
-];
+            // Example: { name: "10 Bullets", desc: "Really cool flash game.", file: "Game/10bullets.html" },
+            // Add more games below
+        ];
 
         const container = document.getElementById('games-container');
         const searchInput = document.getElementById('search');
