@@ -19,10 +19,23 @@ done
 # Remove trailing comma and newline
 games_list=$(echo -e "$games_list" | sed '$ s/,$//')
 
-# Replace the games array block in index.html
-sed -i "/const games = \[/,/];/c\\
-const games = [
-$games_list
-];" index.html
+# Create temp file with new array
+tempfile=$(mktemp)
+echo "const games = [" > "$tempfile"
+echo -n "$games_list" >> "$tempfile"
+echo "" >> "$tempfile"
+echo "];" >> "$tempfile"
+
+# Use awk to replace the array block, passing tempfile as variable
+awk -v tf="$tempfile" '
+BEGIN { in_block = 0 }
+/const games = \[/ { in_block = 1; next }
+/];/ { if (in_block) { system("cat " tf); in_block = 0 } else print; next }
+in_block { next }
+{ print }
+' index.html > temp_index.html && mv temp_index.html index.html
+
+# Clean up
+rm "$tempfile"
 
 echo "Games array updated in index.html with titles extracted from files."
