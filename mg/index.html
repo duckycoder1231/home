@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games - Game Hub</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: black; color: white; }
         header { text-align: center; margin-bottom: 40px; }
         section { margin-bottom: 30px; }
-        h2 { color: #333; }
-        #search { width: 100%; padding: 10px; margin-bottom: 20px; }
+        h2 { color: #007bff; }
+        #search { width: 100%; padding: 10px; margin-bottom: 20px; background-color: black; color: white; border: 1px solid #007bff; border-radius: 5px; }
         #games-container { display: flex; flex-wrap: wrap; gap: 10px; }
-        button { background-color: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; font-size: inherit; }
+        button { background-color: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; font-size: inherit; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
         button:hover { background-color: #0056b3; }
         nav { margin-bottom: 20px; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -39,7 +41,7 @@
             { name: "1", desc: "Description", file: "Game/1(2048-version).html" },
 { name: "really cool flash game", desc: "Description", file: "Game/10bullets.html" },
 { name: "2048 Cupcakes", desc: "Description", file: "Game/2048-Cupcakes.html" },
-            // Example: { name: "10 Bullets", desc: "Really cool flash game.", file: "Game/10bullets.html" },
+            // Example: { name: "10 Bullets", desc: "Really cool flash game.", file: "Game/10bullets.html" }
             // Add more games below
         ];
 
