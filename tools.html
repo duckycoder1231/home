@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tools - Game Hub</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: black; color: white; }
         header { text-align: center; margin-bottom: 40px; }
         section { margin-bottom: 30px; }
-        h2 { color: #333; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin: 5px 0; }
-        a { text-decoration: none; color: #007bff; }
-        a:hover { text-decoration: underline; }
+        h2 { color: #007bff; }
+        h3 { color: #007bff; margin-top: 20px; }
+        button { background-color: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; font-size: inherit; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        button:hover { background-color: #0056b3; }
+        ul { list-style-type: disc; margin-left: 20px; }
         nav { margin-bottom: 20px; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -24,11 +26,10 @@
     </header>
 
     <section>
-        <h2>Gaming Tools</h2>
+        <h2>Tools</h2>
+        <button onclick="window.location.href='https://inv.nadeko.net/feed/popular'">Youtube Viewer</button>
+        <button onclick="window.location.href='https://reddit-viewer.com/'">Reddit Viewer</button>
         <ul>
-            <li><a href="#">Tool 1</a> - Game optimizer.</li>
-            <li><a href="#">Tool 2</a> - Cheat engine.</li>
-            <li><a href="#">Tool 3</a> - Mod installer.</li>
         </ul>
     </section>
 
